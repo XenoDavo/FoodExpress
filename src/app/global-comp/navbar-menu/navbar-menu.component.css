@@ -1,0 +1,286 @@
+.navbar{
+    position: fixed;
+    width: 100%; /* Aseguramos que el navbar no exceda el ancho de la pantalla */
+    /*box-sizing: border-box; /* Aseguramos que el padding no se desborde */
+    padding: 0.5rem 3rem;
+    padding-left: 2rem;
+    background-color: var(--marronoscuro);
+}
+
+.navbar-container{
+    max-width: 100%;
+    padding: 0;
+    margin: 0 auto; /* Centralizamos el contenido */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*box-sizing: border-box;*/
+}
+
+.navbar.scrolled{
+    background-color: var(--dorado);
+}
+
+.navbar-brand{
+    flex-shrink: 0; /* Evitamos que el logo sea reducido */
+    cursor: pointer;
+}
+
+/*.logo {
+    width: 25rem;
+    height: 30rem;
+    max-height: 100%;
+    object-fit: contain;
+    margin-left: 2rem;
+    margin-top: 1rem;
+}*/
+
+
+
+/* Asegura que el navbar se mantenga en una sola línea */
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-menu{
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end; /* Alinea el menú a la derecha */
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.navbar-toggler{
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Alinear el ícono de menu hamburguesa a la derecha */
+    margin-left: auto; /* Aseguramos que el ícono de menu hamburguesa esté alineado a la derecha */
+}
+
+.navbar-toggler-icon{
+    display: inline-block;
+    width: 3rem;
+    height: 0.3rem;
+    background-color: var(--crema);
+    position: relative;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after{
+    content: '';
+    display: inline-block;
+    width: 3rem;
+    height: 0.3rem;
+    background-color: var(--crema);
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease;
+}
+
+.navbar-toggler-icon::before{
+    top: -1rem;
+}
+
+.navbar-toggler-icon::after{
+    top: 1rem;
+}
+
+/* Estilos del menú desplegable para dispositivos móviles */
+.offcanvas-menu{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 2.5rem;
+    height: 100%;
+    background-color: var(--crema);
+    transition: right 0.3s ease;
+    z-index: 2;
+    padding-top: 2rem;
+}
+
+.offcanvas-menu.open{
+    right: 0;
+}
+
+.close-menu{
+    background: none;
+    color: var(--dorado);
+    border: none;
+    font-size: 3rem;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.navbar-nav{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-item{
+    margin: 0 1rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.nav-link{
+    color: #000;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    transition: color 0.3 ease;
+    font-weight: 400;
+    font-size: 1.8rem;
+}
+
+/* Línea que aparece debajo de la opción del menú en hover */
+.nav-link::after{
+    content: '';
+    display: block;
+    height: 0.2rem;
+    background-color: var(--crema);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+/* Desplazar la línea al pasar el cursor por encima */
+.nav-link:hover::after,
+.nav-link:focus::after{
+    width: 100%;
+}
+
+/* Overlay oscuro */
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.overlay.show{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 992px) {
+    .navbar-menu {
+        display: flex;
+        justify-content: flex-end; /* Alinear las opciones del menú a la derecha */
+        flex-grow: 1;
+    }
+    
+    .navbar-nav {
+        flex-direction: row;
+        align-items: center; /* Alinea verticalmente al centro */
+    }
+    
+    .navbar-toggler {
+        display: none; /* Ocultar el botón de hamburguesa en pantallas grandes */
+    }
+    
+    .offcanvas-menu {
+        display: none; /* Ocultar el menú desplegable en pantallas grandes */
+    }
+    
+    .overlay {
+        display: none; /* Ocultar overlay en pantallas grandes */
+    }
+    
+    .nav-link {
+        color: var(--crema);
+        text-decoration: none;
+        padding: 0.5rem 0.7rem;
+        display: block;
+        transition: color 0.3s ease;
+        font-weight: 400;
+        font-size: 1.8rem;
+    }
+    
+    .nav-link:hover,
+    .nav-link:focus {
+        color: rgb(255, 255, 255);
+    }
+    }
+    
+    /* Estilos para dispositivos móviles */
+    @media (max-width: 991px) {
+    .navbar-menu {
+        display: none; /* Ocultar menú de pantallas grandes en móviles */
+    }
+    
+    .navbar-toggler {
+        display: inline-block; /* Mostrar el botón de hamburguesa en móviles */
+        margin-right: 1.5rem;
+    }
+    
+    .navbar-nav {
+        flex-direction: column;
+        margin: 0;
+        margin-top: 2rem;
+        align-items: flex-start;
+    }
+    
+    .title-menu {
+        color: #000;
+        margin-left: 10px;
+    }
+    
+    .nav-item {
+        margin: 0.4rem 0;
+    }
+    
+    .nav-link:hover,
+    .nav-link:focus {
+        background-color: var(--crema);
+    }
+    
+    .logo {
+        margin-top: 1rem;
+        width: 9rem;
+        height: auto;
+    }
+    
+    .navbar {
+        width: 100%; /* Asegura que el navbar no exceda el ancho de la pantalla */
+        /*box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
+        padding: 0.5rem 0.5rem;
+    }
+}
+
+/* Estilos del botón Acceso */
+.nav-item a.nav-link.acceso {
+    border: 2px solid var(--crema); /* Aplica el borde blanco */
+    padding: 0.5rem 1rem; /* Ajusta el padding para que el borde no quede muy pegado al texto */
+    border-radius: 5px; /* Opcional: redondear bordes si lo prefieres */
+    color: var(--crema); /* Asegura que el texto se mantenga visible */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-item a.nav-link.acceso:hover {
+    background-color: var(--crema); /* Cambia el fondo al pasar el cursor */
+    color: #050a30; /* Cambia el color del texto al pasar el cursor */
+}
+.nav-item a.nav-link.acceso::after {
+    content: none; /* Elimina la línea debajo del botón "Acceso" */
+}

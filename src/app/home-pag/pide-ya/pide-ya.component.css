@@ -1,0 +1,43 @@
+/* SEPARADOR ORDENA YA!! */
+.separador{
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.separador::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+}
+
+.contenido-separador{
+    padding: 5rem;
+}
+
+.contenido-separador h2{
+    font-size: 4rem;
+    color: #fff;
+    text-align: center;
+}
+@media(min-width: 768px) {
+    .contenido-separador h2{
+        text-align: left;
+        font-size: 5rem;
+        color: #fff;
+    }
+}
+.contenido-separador p{
+    color: #fff;
+    font-size: 3rem;
+    text-align: center;
+}
+@media(min-width: 768px) {
+    .contenido-separador p{
+        text-align: left;
+    }
+}

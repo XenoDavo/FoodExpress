@@ -1,0 +1,59 @@
+/* SECCIÓN NOSOTROS*/
+.contenedor-nosotros{
+    
+    padding-top: 5rem;
+}
+@media(min-width: 768px) {
+    .contenedor-nosotros{
+        display: flex;
+         justify-content: space-between;
+    }   
+}
+.texto-nosotros, .imagenes-nosotros{
+   
+    flex: 0 0 calc(50% - 1rem) ;
+}
+.texto-nosotros .bienvenida{
+    font-size: 4rem;
+    color: var(--verde);
+    text-align: center;
+}
+@media(min-width: 768px) {
+    .texto-nosotros .bienvenida{
+        text-align: left;
+    }
+}
+.texto-nosotros h1{
+    font-size: 5rem;
+    text-align: center;
+}
+@media(min-width: 768px) {
+    .texto-nosotros h1{
+        text-align: left;
+    }
+}
+.texto-nosotros p{
+    font-size: 2rem;
+    text-align: center;
+}
+@media(min-width: 768px) {
+    .texto-nosotros p{
+        text-align: left;
+    }
+}
+.imagenes-nosotros{
+    display: flex;
+    justify-content: space-between;
+}
+.imagenes-nosotros img{
+    border-radius: 5px;
+}
+.imagen1, .imagenes2{
+    flex: 0 0 calc(50% - 1rem);
+}
+.imagenes2 img{
+    margin-bottom: 1rem;
+}
+.menu{
+    padding-top: 4rem;
+}

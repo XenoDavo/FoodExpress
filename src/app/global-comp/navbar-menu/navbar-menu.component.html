@@ -1,0 +1,82 @@
+<nav class="navbar" [ngClass]="{'scrolled': isScrolled}">
+    <div class="navbar-container">
+        <!-- Logotipo -->
+        <a href="#" class="navbar-brand" routerLink="/inicio">
+            <img src="assets/img/logo-foodexpress.png" alt="logo" type="image/png">
+        </a>
+
+        <!-- Menú para pantallas grandes -->
+        <div class="navbar-menu">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" routerLink="/inicio">Inicio</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link" (click)="scrollToSection('section-nosotros')">Sobre Nosotros</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link" routerLink="/menu">Menú</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link" routerLink="/domicilios">Domicilios</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link" (click)="scrollToSection('section-reserva')">Reservas</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link" (click)="scrollToSection('section-contactame')">Contacto</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link acceso" routerLink="/acceso">Iniciar Sesión</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Botón de hamburguesa para dispositivos móviles -->
+        <button class="navbar-toggler" type="button" (click)="toggleMenu()" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menú desplegable para dispositivos móviles -->
+        <div class="offcanvas-menu" [ngClass]="{'open': isMenuOpen}">
+            <!-- Botón para cerrar el menú -->
+            <button class="close-menu" (click)="toggleMenu()" aria-label="Close navigation">
+                &times;
+            </button>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" routerLink="/inicio">Inicio</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link" (click)="scrollToSection('section-nosotros')">Sobre Nosotros</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link" routerLink="/menu">Menú</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link" routerLink="/reservas">Reservas</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link" (click)="scrollToSection('section-contactame')">Contacto</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link acceso" routerLink="/acceso">Iniciar Sesión</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Overlay oscuro -->
+        <div class="overlay" [ngClass]="{'show': isMenuOpen}" (click)="toggleMenu()"></div>
+    </div>
+</nav>

@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root{
+    --amastel: #ffd964;
+    --crema:#fff4ea;
+    --dorado:#ffc61a;
+    --marronoscuro:#372a28;
+    --mostaza:#946c0a;
+    --rosapastel: #efcecb;
+
+
+    --titulos: 'Arima', cursive;
+    --parrafos: 'Mulish', sans-serif;
+
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%; /* Equivalemos 1rem = 10px */
+}
+
+body{
+    font-size: 1.6rem;
+}
+
+*,*::after, *::before{
+    box-sizing: inherit;
+}
+
+h1, h2, h3{
+    font-family: var(--titulos);
+}
+
+p, a{
+    font-family: var(--parrafos);
+}
+
+img{
+    max-width: 100%;
+}

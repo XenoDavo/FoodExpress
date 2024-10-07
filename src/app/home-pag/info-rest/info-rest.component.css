@@ -1,0 +1,46 @@
+/* PIE DE PÁGINA */
+.pie-pagina{
+    margin-top: 5rem;
+    background-color: rgb(20,20,20);
+    padding: 5rem;
+}
+@media(min-width:768px){
+    .contenedor-piepagina{
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
+.info{
+    flex: 0 0 calc(25% - 1rem);
+    margin-bottom: 2rem;
+}
+.info h3, .info p{
+    color: #fff;
+    text-align: center;
+}
+.info h3{
+    font-size: 2.2rem;
+}
+.info p{
+    font-size: 1.8rem;
+}
+
+.redes-pie{
+    text-align: center;
+}
+.info input[type="email"]{
+    font-family: var(--parrafos);
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+}
+
+.info input[type="submit"]{
+    padding: .5rem 2rem;
+    font-size: 1.8rem;
+    border-radius: 0;
+}

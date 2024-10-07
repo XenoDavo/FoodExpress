@@ -1,0 +1,25 @@
+/* SECCIÓN RESERVA */
+.reserva h2{
+    background-color: var(--rojo);
+    display: inline-block;
+    padding: 1rem 3rem;
+    color: #fff;
+    font-size: 4rem;
+}
+@media(min-width: 768px) {
+    .contenido-reserva{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.texto-reserva, .imagen-reserva{
+    flex: 0 0 calc(50% - 1rem);
+}
+.texto-reserva h3{
+    font-size: 3rem;
+
+}
+.texto-reserva p{
+    font-size: 2rem;
+    
+}
